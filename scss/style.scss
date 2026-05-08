@@ -178,6 +178,118 @@ body {
     }
   }
 
+  // 🌹 Pink / Rose Flower
+  &--4 {
+    bottom: 15vmin;
+    left: 15%;
+    transform: rotate(-5deg);
+    animation: moving-flower-1 4s linear infinite;
+
+    --petal-color: #ff8fa3;
+    --petal-glow: #ffb3c1;
+    --petal-dark: #d9466e;
+    --petal-gradient-top: #ffb3c1;
+    --petal-gradient-bottom: #d9466e;
+    --leaf-4-bg: #d9466e;
+
+    .flower__line {
+      height: 55vmin;
+      animation-delay: 0.5s;
+
+      &__leaf {
+        &--1 { animation: blooming-leaf-right var(--fl-speed) 1.8s backwards; }
+        &--2 { animation: blooming-leaf-right var(--fl-speed) 1.6s backwards; }
+        &--3 { animation: blooming-leaf-left var(--fl-speed) 1.4s backwards; }
+        &--4 { animation: blooming-leaf-left var(--fl-speed) 1.2s backwards; }
+        &--5 { animation: blooming-leaf-right var(--fl-speed) 2s backwards; }
+        &--6 { animation: blooming-leaf-left var(--fl-speed) 2.2s backwards; }
+      }
+    }
+  }
+
+  // 🌷 Purple / Lavender Flower
+  &--5 {
+    bottom: 12vmin;
+    left: 75%;
+    transform: rotate(10deg);
+    animation: moving-flower-2 4s linear infinite;
+
+    --petal-color: #c77dff;
+    --petal-glow: #e0aaff;
+    --petal-dark: #7b2cbf;
+    --petal-gradient-top: #e0aaff;
+    --petal-gradient-bottom: #7b2cbf;
+    --leaf-4-bg: #7b2cbf;
+
+    .flower__line {
+      height: 50vmin;
+      animation-delay: 0.7s;
+
+      &__leaf {
+        &--1 { animation: blooming-leaf-right var(--fl-speed) 2s backwards; }
+        &--2 { animation: blooming-leaf-right var(--fl-speed) 1.8s backwards; }
+        &--3 { animation: blooming-leaf-left var(--fl-speed) 1.6s backwards; }
+        &--4 { animation: blooming-leaf-left var(--fl-speed) 1.4s backwards; }
+      }
+    }
+  }
+
+  // 🌻 Golden Yellow / Orange Flower
+  &--6 {
+    bottom: 8vmin;
+    left: 25%;
+    transform: rotate(-20deg);
+    animation: moving-flower-3 4s linear infinite;
+
+    --petal-color: #ffdd65;
+    --petal-glow: #fff3b0;
+    --petal-dark: #e09f3e;
+    --petal-gradient-top: #fff3b0;
+    --petal-gradient-bottom: #e09f3e;
+    --leaf-4-bg: #e09f3e;
+
+    .flower__line {
+      height: 60vmin;
+      animation-delay: 1s;
+
+      &__leaf {
+        &--1 { animation: blooming-leaf-right var(--fl-speed) 2.2s backwards; }
+        &--2 { animation: blooming-leaf-right var(--fl-speed) 2s backwards; }
+        &--3 { animation: blooming-leaf-left var(--fl-speed) 1.8s backwards; }
+        &--4 { animation: blooming-leaf-left var(--fl-speed) 1.6s backwards; }
+        &--5 { animation: blooming-leaf-right var(--fl-speed) 2.4s backwards; }
+        &--6 { animation: blooming-leaf-left var(--fl-speed) 2.6s backwards; }
+      }
+    }
+  }
+
+  // 🌺 Coral / Red Flower
+  &--7 {
+    bottom: 18vmin;
+    left: 60%;
+    transform: rotate(15deg);
+    animation: moving-flower-1 4s linear infinite;
+
+    --petal-color: #ff6b6b;
+    --petal-glow: #ff9999;
+    --petal-dark: #c1121f;
+    --petal-gradient-top: #ff9999;
+    --petal-gradient-bottom: #c1121f;
+    --leaf-4-bg: #c1121f;
+
+    .flower__line {
+      height: 45vmin;
+      animation-delay: 1.2s;
+
+      &__leaf {
+        &--1 { animation: blooming-leaf-right var(--fl-speed) 2.4s backwards; }
+        &--2 { animation: blooming-leaf-right var(--fl-speed) 2.2s backwards; }
+        &--3 { animation: blooming-leaf-left var(--fl-speed) 2s backwards; }
+        &--4 { animation: blooming-leaf-left var(--fl-speed) 1.8s backwards; }
+      }
+    }
+  }
+
   &__leafs {
     position: relative;
     animation: blooming-flower 2s backwards;
@@ -185,7 +297,7 @@ body {
     $delay: 0.8;
     $inc: 0.3;
 
-    @for $i from 1 through 3 {
+    @for $i from 1 through 7 {
       &--#{$i} {
         $delay: $delay + $inc;
         animation-delay: #{$delay}s;
@@ -200,7 +312,7 @@ body {
       transform: translate(-50%, -100%);
       width: 8vmin;
       height: 8vmin;
-      background-color: #6bf0ff;
+      background-color: var(--petal-glow, #6bf0ff);
       filter: blur(10vmin);
     }
   }
@@ -212,8 +324,8 @@ body {
     width: 8vmin;
     height: 11vmin;
     border-radius: 51% 49% 47% 53% / 44% 45% 55% 69%;
-    background-color: #a7ffee;
-    background-image: linear-gradient(to top, #54b8aa, #a7ffee);
+    background-color: var(--petal-color, #a7ffee);
+    background-image: linear-gradient(to top, var(--petal-dark, #54b8aa), var(--petal-gradient-top, #a7ffee));
     transform-origin: bottom center;
     opacity: 0.9;
     box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
@@ -236,7 +348,7 @@ body {
       transform-origin: bottom left;
       border-radius: 4vmin 10vmin 4vmin 4vmin;
       transform: translate(-0%, 18%) rotateX(70deg) rotate(-43deg);
-      background-image: linear-gradient(to top, #39c6d6, #a7ffee);
+      background-image: linear-gradient(to top, var(--petal-dark, #39c6d6), var(--petal-gradient-top, #a7ffee));
       z-index: 1;
       opacity: 0.8;
     }
@@ -1401,7 +1513,7 @@ body {
   }
 }
 
-// ⭐ Shooting Stars
+// ⭐ Shooting Stars (hidden until flower blooms)
 .stars {
   position: fixed;
   top: 0;
@@ -1413,37 +1525,43 @@ body {
   overflow: hidden;
 }
 
-.shooting-star {
+.stars .shooting-star {
   position: absolute;
   width: 2px;
   height: 2px;
   background: #fff;
   border-radius: 50%;
-  animation: shoot var(--shoot-duration, 4s) ease-in infinite;
+  opacity: 0;
+  animation: none;
 }
 
-.shooting-star::before {
+.stars .shooting-star::before {
   content: "";
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 80px;
+  width: 120px;
   height: 1px;
   background: linear-gradient(to left, rgba(255, 255, 255, 0), #fff);
   right: 0;
 }
 
-.shooting-star:nth-child(1) { top: 10%; left: 80%; --shoot-duration: 5s;  animation-delay: 0s;   --angle: -35deg; }
-.shooting-star:nth-child(2) { top: 5%;  left: 60%; --shoot-duration: 7s;  animation-delay: 2s;   --angle: -25deg; }
-.shooting-star:nth-child(3) { top: 15%; left: 90%; --shoot-duration: 6s;  animation-delay: 4s;   --angle: -40deg; }
-.shooting-star:nth-child(4) { top: 20%; left: 30%; --shoot-duration: 8s;  animation-delay: 1s;   --angle: -30deg; }
-.shooting-star:nth-child(5) { top: 8%;  left: 50%; --shoot-duration: 5.5s; animation-delay: 6s;   --angle: -20deg; }
-.shooting-star:nth-child(6) { top: 25%; left: 70%; --shoot-duration: 6.5s; animation-delay: 3s;   --angle: -45deg; }
+.stars-visible .stars .shooting-star {
+  opacity: 1;
+  animation: shoot var(--shoot-duration, 5s) ease-in infinite;
+}
+
+.stars-visible .shooting-star:nth-child(1) { top: 15%; left: 10%;  --shoot-duration: 4s;  animation-delay: 0s;   --angle: 30deg; }
+.stars-visible .shooting-star:nth-child(2) { top: 30%; left: 20%;  --shoot-duration: 6s;  animation-delay: 2s;   --angle: 35deg; }
+.stars-visible .shooting-star:nth-child(3) { top: 8%;  left: 5%;   --shoot-duration: 5s;  animation-delay: 4s;   --angle: 25deg; }
+.stars-visible .shooting-star:nth-child(4) { top: 40%; left: 15%;  --shoot-duration: 7s;  animation-delay: 1s;   --angle: 40deg; }
+.stars-visible .shooting-star:nth-child(5) { top: 20%; left: 2%;   --shoot-duration: 4.5s; animation-delay: 6s;   --angle: 20deg; }
+.stars-visible .shooting-star:nth-child(6) { top: 50%; left: 25%;  --shoot-duration: 5.5s; animation-delay: 3s;   --angle: 45deg; }
 
 @keyframes shoot {
   0% {
     opacity: 0;
-    transform: rotate(var(--angle, -35deg)) translateX(0) scale(1);
+    transform: rotate(var(--angle, 30deg)) translateX(0) scale(1);
   }
   5% {
     opacity: 1;
@@ -1453,7 +1571,7 @@ body {
   }
   20% {
     opacity: 0;
-    transform: rotate(var(--angle, -35deg)) translateX(-400px) scale(0.5);
+    transform: rotate(var(--angle, 30deg)) translateX(600px) scale(0.3);
   }
   100% {
     opacity: 0;

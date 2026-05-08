@@ -2,7 +2,7 @@ const title = document.querySelector('.title');
 if (!title) {
   console.error("Error: Title element (.title) not found in the HTML.");
 } else {
-  const text = 'I Have Something'.split('');
+  const text = 'I Have Something For You'.split('');
 
   for (let index = 0; index < text.length; index++) {
     if (text[index] !== ' ') {

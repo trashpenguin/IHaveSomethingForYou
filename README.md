@@ -1,10 +1,10 @@
-# 💐 I Have Something - Valentine's Flower Animation
+# 💐 I Have Something For You - Valentine's Flower Animation
 
 A romantic, animated flower webpage built with pure HTML, CSS (SCSS), and JavaScript. This project creates a beautiful, animated flower garden with a night sky background, perfect for sharing a special Valentine's Day message.
 
 ## ✨ Features
 
-- **Landing Page** (`index.html`) — Displays the text "I Have Something" with a subtle letter-by-letter animation and a button to open the flower display.
+- **Landing Page** (`index.html`) — Displays the text "I Have Something For You" with a subtle letter-by-letter animation and a button to open the flower display.
 - **Flower Animation Page** (`flower.html`) — Animated 3D flowers with blooming petals, swaying stalks, grass, and glowing light particles, all built with pure CSS.
 - **Typing Effect** — Messages are revealed letter-by-letter with a smooth typing animation.
 - **Responsive Design** — Optimized for mobile and desktop viewing.
@@ -74,7 +74,7 @@ Edit `js/main.js` to modify the animated text on the flower page (default: `"wuw
 const titles = "Your Message Here ❤️".split('');
 ```
 
-Edit `js/index.js` to change the landing page text (default: `"I Have Something"`):
+Edit `js/index.js` to change the landing page text (default: `"I Have Something For You"`):
 
 ```javascript
 const text = 'Your Text Here'.split('');
