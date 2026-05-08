@@ -68,13 +68,13 @@ sleeping.github.io/
 
 ### Changing the Message
 
-Edit `js/main.js` to modify the animated text on the flower page:
+Edit `js/main.js` to modify the animated text on the flower page (default: `"wuwuvyang ❤️"`):
 
 ```javascript
 const titles = "Your Message Here ❤️".split('');
 ```
 
-Edit `js/index.js` to change the landing page text:
+Edit `js/index.js` to change the landing page text (default: `"I Have Something"`):
 
 ```javascript
 const text = 'Your Text Here'.split('');

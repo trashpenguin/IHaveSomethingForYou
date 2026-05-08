@@ -56,11 +56,10 @@
   }
 }
 
-/* Terapkan animasi dengan delay */
+/* Animation delay is set inline by JS */
 .title span {
   opacity: 0;
   animation: typing 1s ease forwards;
-  animation-delay: var(--delay);
 }
 
 a {
