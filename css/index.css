@@ -66,6 +66,19 @@ a {
   text-decoration: none;
 }
 
+.spotify-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.spotify-widget:hover {
+  opacity: 1;
+}
+
 .btn {
   border: none;
   width: 15em;
