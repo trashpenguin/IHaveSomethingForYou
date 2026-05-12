@@ -246,6 +246,111 @@ body {
 .flower--7 .flower__line__leaf--4 {
   animation: blooming-leaf-left var(--fl-speed) 1.8s backwards;
 }
+.flower--8 {
+  left: 5%;
+  bottom: 10vmin;
+  transform: rotate(-10deg);
+  animation: moving-flower-3 4s linear infinite;
+  --petal-color: #4cc9f0;
+  --petal-glow: #90e0ef;
+  --petal-dark: #0077b6;
+  --petal-gradient-top: #90e0ef;
+  --petal-gradient-bottom: #0077b6;
+  --leaf-4-bg: #0077b6;
+}
+.flower--8 .flower__line {
+  height: 52vmin;
+  animation-delay: 1.4s;
+}
+.flower--8 .flower__line__leaf--1 { animation: blooming-leaf-right var(--fl-speed) 2.7s backwards; }
+.flower--8 .flower__line__leaf--2 { animation: blooming-leaf-right var(--fl-speed) 2.5s backwards; }
+.flower--8 .flower__line__leaf--3 { animation: blooming-leaf-left var(--fl-speed) 2.3s backwards; }
+.flower--8 .flower__line__leaf--4 { animation: blooming-leaf-left var(--fl-speed) 2.1s backwards; }
+
+.flower--9 {
+  left: 88%;
+  bottom: 10vmin;
+  transform: rotate(8deg);
+  animation: moving-flower-1 4s linear infinite;
+  --petal-color: #fb8500;
+  --petal-glow: #ffb703;
+  --petal-dark: #d62828;
+  --petal-gradient-top: #ffb703;
+  --petal-gradient-bottom: #d62828;
+  --leaf-4-bg: #d62828;
+}
+.flower--9 .flower__line {
+  height: 58vmin;
+  animation-delay: 0.5s;
+}
+.flower--9 .flower__line__leaf--1 { animation: blooming-leaf-right var(--fl-speed) 2.1s backwards; }
+.flower--9 .flower__line__leaf--2 { animation: blooming-leaf-right var(--fl-speed) 1.9s backwards; }
+.flower--9 .flower__line__leaf--3 { animation: blooming-leaf-left var(--fl-speed) 1.7s backwards; }
+.flower--9 .flower__line__leaf--4 { animation: blooming-leaf-left var(--fl-speed) 1.5s backwards; }
+
+.flower--10 {
+  left: 42%;
+  bottom: 5vmin;
+  transform: rotate(-6deg);
+  animation: moving-flower-2 4s linear infinite;
+  --petal-color: #06d6a0;
+  --petal-glow: #80ffdb;
+  --petal-dark: #2dc653;
+  --petal-gradient-top: #80ffdb;
+  --petal-gradient-bottom: #2dc653;
+  --leaf-4-bg: #2dc653;
+}
+.flower--10 .flower__line {
+  height: 38vmin;
+  animation-delay: 0.8s;
+}
+.flower--10 .flower__line__leaf--1 { animation: blooming-leaf-right var(--fl-speed) 2.9s backwards; }
+.flower--10 .flower__line__leaf--2 { animation: blooming-leaf-right var(--fl-speed) 2.7s backwards; }
+.flower--10 .flower__line__leaf--3 { animation: blooming-leaf-left var(--fl-speed) 2.5s backwards; }
+.flower--10 .flower__line__leaf--4 { animation: blooming-leaf-left var(--fl-speed) 2.3s backwards; }
+
+.flower--11 {
+  left: 70%;
+  bottom: 14vmin;
+  transform: rotate(12deg);
+  animation: moving-flower-3 4s linear infinite;
+  --petal-color: #f72585;
+  --petal-glow: #ff85a1;
+  --petal-dark: #b5179e;
+  --petal-gradient-top: #ff85a1;
+  --petal-gradient-bottom: #b5179e;
+  --leaf-4-bg: #b5179e;
+}
+.flower--11 .flower__line {
+  height: 62vmin;
+  animation-delay: 1.1s;
+}
+.flower--11 .flower__line__leaf--1 { animation: blooming-leaf-right var(--fl-speed) 2.3s backwards; }
+.flower--11 .flower__line__leaf--2 { animation: blooming-leaf-right var(--fl-speed) 2.1s backwards; }
+.flower--11 .flower__line__leaf--3 { animation: blooming-leaf-left var(--fl-speed) 1.9s backwards; }
+.flower--11 .flower__line__leaf--4 { animation: blooming-leaf-left var(--fl-speed) 1.7s backwards; }
+
+.flower--12 {
+  left: 12%;
+  bottom: 8vmin;
+  transform: rotate(-18deg);
+  animation: moving-flower-1 4s linear infinite;
+  --petal-color: #9b5de5;
+  --petal-glow: #c77dff;
+  --petal-dark: #480ca8;
+  --petal-gradient-top: #c77dff;
+  --petal-gradient-bottom: #480ca8;
+  --leaf-4-bg: #480ca8;
+}
+.flower--12 .flower__line {
+  height: 45vmin;
+  animation-delay: 1.7s;
+}
+.flower--12 .flower__line__leaf--1 { animation: blooming-leaf-right var(--fl-speed) 3.1s backwards; }
+.flower--12 .flower__line__leaf--2 { animation: blooming-leaf-right var(--fl-speed) 2.9s backwards; }
+.flower--12 .flower__line__leaf--3 { animation: blooming-leaf-left var(--fl-speed) 2.7s backwards; }
+.flower--12 .flower__line__leaf--4 { animation: blooming-leaf-left var(--fl-speed) 2.5s backwards; }
+
 .flower__leafs {
   position: relative;
   animation: blooming-flower 2s backwards;
@@ -270,6 +375,21 @@ body {
 }
 .flower__leafs--7 {
   animation-delay: 2.9s;
+}
+.flower__leafs--8 {
+  animation-delay: 3.2s;
+}
+.flower__leafs--9 {
+  animation-delay: 3.5s;
+}
+.flower__leafs--10 {
+  animation-delay: 3.8s;
+}
+.flower__leafs--11 {
+  animation-delay: 4.1s;
+}
+.flower__leafs--12 {
+  animation-delay: 4.4s;
 }
 .flower__leafs::after {
   content: "";
@@ -1295,6 +1415,90 @@ body {
   --fly-duration: 7.5s;
   animation-delay: 1.8s;
 }
+.firefly:nth-child(7) {
+  top: 15%;
+  left: 30%;
+  --fly-duration: 11s;
+  animation-delay: 0.3s;
+}
+.firefly:nth-child(8) {
+  top: 80%;
+  left: 50%;
+  --fly-duration: 6.5s;
+  animation-delay: 2.1s;
+}
+.firefly:nth-child(9) {
+  top: 25%;
+  left: 85%;
+  --fly-duration: 9.5s;
+  animation-delay: 1.2s;
+}
+.firefly:nth-child(10) {
+  top: 65%;
+  left: 35%;
+  --fly-duration: 7s;
+  animation-delay: 3.5s;
+}
+.firefly:nth-child(11) {
+  top: 10%;
+  left: 15%;
+  --fly-duration: 12s;
+  animation-delay: 0.7s;
+}
+.firefly:nth-child(12) {
+  top: 55%;
+  left: 65%;
+  --fly-duration: 8.5s;
+  animation-delay: 4s;
+}
+.firefly:nth-child(13) {
+  top: 40%;
+  left: 5%;
+  --fly-duration: 6s;
+  animation-delay: 2.8s;
+}
+.firefly:nth-child(14) {
+  top: 75%;
+  left: 78%;
+  --fly-duration: 10s;
+  animation-delay: 1.5s;
+}
+.firefly:nth-child(15) {
+  top: 30%;
+  left: 55%;
+  --fly-duration: 9s;
+  animation-delay: 0.9s;
+}
+.firefly:nth-child(16) {
+  top: 85%;
+  left: 20%;
+  --fly-duration: 7.5s;
+  animation-delay: 3.2s;
+}
+.firefly:nth-child(17) {
+  top: 20%;
+  left: 40%;
+  --fly-duration: 11.5s;
+  animation-delay: 1.8s;
+}
+.firefly:nth-child(18) {
+  top: 90%;
+  left: 92%;
+  --fly-duration: 8s;
+  animation-delay: 4.5s;
+}
+.firefly:nth-child(19) {
+  top: 48%;
+  left: 28%;
+  --fly-duration: 6.5s;
+  animation-delay: 2.4s;
+}
+.firefly:nth-child(20) {
+  top: 5%;
+  left: 72%;
+  --fly-duration: 10.5s;
+  animation-delay: 0.2s;
+}
 
 @keyframes firefly-float {
   0% {
@@ -1327,6 +1531,7 @@ body {
 }
 
 .spotify-widget {
+  width: 300px;
   transform: translateY(calc(100% - 38px));
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 12px 12px 0 0;
