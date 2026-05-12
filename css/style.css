@@ -1566,4 +1566,72 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* ── Responsive ── */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .title {
+    font-size: 42px;
+    margin-top: 24px;
+  }
+  .flowers {
+    transform: scale(0.72);
+    transform-origin: bottom center;
+  }
+  .spotify-widget {
+    width: min(260px, calc(100vw - 20px));
+    right: 10px !important;
+  }
+  .spotify-widget iframe {
+    width: 100% !important;
+    height: 280px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .title {
+    font-size: 26px;
+    margin-top: 16px;
+    letter-spacing: 2px;
+  }
+  .flowers {
+    transform: scale(0.55);
+    transform-origin: bottom center;
+  }
+  .spotify-widget {
+    width: calc(100vw - 16px) !important;
+    right: 8px !important;
+  }
+  .spotify-widget iframe {
+    width: 100% !important;
+    height: 232px !important;
+  }
+  .spotify-tab {
+    font-size: 10px;
+    padding: 7px 10px;
+    gap: 6px;
+  }
+}
+
+/* Landscape phone */
+@media (max-height: 500px) and (orientation: landscape) {
+  .title {
+    font-size: 20px;
+    margin-top: 8px;
+  }
+  .flowers {
+    transform: scale(0.42);
+    transform-origin: bottom center;
+  }
+  .spotify-widget {
+    width: 220px;
+    right: 8px !important;
+  }
+  .spotify-widget iframe {
+    width: 100% !important;
+    height: 180px !important;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
