@@ -1326,4 +1326,17 @@ body {
   animation-play-state: paused !important;
 }
 
+.spotify-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+}
+
+.spotify-widget:hover {
+  opacity: 1;
+}
+
 /*# sourceMappingURL=style.css.map */
