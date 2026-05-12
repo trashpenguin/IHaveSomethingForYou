@@ -57,10 +57,13 @@ body {
   --fl-speed: 0.8s;
 }
 .flower--1 {
+  left: 50%;
+  bottom: 10vmin;
+  transform: rotate(2deg);
   animation: moving-flower-1 4s linear infinite;
 }
 .flower--1 .flower__line {
-  height: 70vmin;
+  height: 78vmin;
   animation-delay: 0.3s;
 }
 .flower--1 .flower__line__leaf--1 {
@@ -83,11 +86,12 @@ body {
 }
 .flower--2 {
   left: 50%;
-  transform: rotate(20deg);
+  bottom: 10vmin;
+  transform: rotate(18deg);
   animation: moving-flower-2 4s linear infinite;
 }
 .flower--2 .flower__line {
-  height: 60vmin;
+  height: 64vmin;
   animation-delay: 0.6s;
 }
 .flower--2 .flower__line__leaf--1 {
@@ -104,10 +108,12 @@ body {
 }
 .flower--3 {
   left: 50%;
-  transform: rotate(-15deg);
+  bottom: 10vmin;
+  transform: rotate(-14deg);
   animation: moving-flower-3 4s linear infinite;
 }
 .flower--3 .flower__line {
+  height: 70vmin;
   animation-delay: 0.9s;
 }
 .flower--3 .flower__line__leaf--1 {
@@ -123,9 +129,9 @@ body {
   animation: blooming-leaf-left var(--fl-speed) 1.9s backwards;
 }
 .flower--4 {
-  bottom: 15vmin;
-  left: 15%;
-  transform: rotate(-5deg);
+  bottom: 10vmin;
+  left: 50%;
+  transform: rotate(-26deg);
   animation: moving-flower-1 4s linear infinite;
   --petal-color: #ff8fa3;
   --petal-glow: #ffb3c1;
@@ -157,9 +163,9 @@ body {
   animation: blooming-leaf-left var(--fl-speed) 2.2s backwards;
 }
 .flower--5 {
-  bottom: 12vmin;
-  left: 75%;
-  transform: rotate(10deg);
+  bottom: 10vmin;
+  left: 50%;
+  transform: rotate(22deg);
   animation: moving-flower-2 4s linear infinite;
   --petal-color: #c77dff;
   --petal-glow: #e0aaff;
@@ -185,9 +191,9 @@ body {
   animation: blooming-leaf-left var(--fl-speed) 1.4s backwards;
 }
 .flower--6 {
-  bottom: 8vmin;
-  left: 25%;
-  transform: rotate(-20deg);
+  bottom: 10vmin;
+  left: 50%;
+  transform: rotate(-33deg);
   animation: moving-flower-3 4s linear infinite;
   --petal-color: #ffdd65;
   --petal-glow: #fff3b0;
@@ -219,9 +225,9 @@ body {
   animation: blooming-leaf-left var(--fl-speed) 2.6s backwards;
 }
 .flower--7 {
-  bottom: 18vmin;
-  left: 60%;
-  transform: rotate(15deg);
+  bottom: 10vmin;
+  left: 50%;
+  transform: rotate(30deg);
   animation: moving-flower-1 4s linear infinite;
   --petal-color: #ff6b6b;
   --petal-glow: #ff9999;
@@ -247,9 +253,9 @@ body {
   animation: blooming-leaf-left var(--fl-speed) 1.8s backwards;
 }
 .flower--8 {
-  left: 5%;
+  left: 50%;
   bottom: 10vmin;
-  transform: rotate(-10deg);
+  transform: rotate(-20deg);
   animation: moving-flower-3 4s linear infinite;
   --petal-color: #4cc9f0;
   --petal-glow: #90e0ef;
@@ -268,9 +274,9 @@ body {
 .flower--8 .flower__line__leaf--4 { animation: blooming-leaf-left var(--fl-speed) 2.1s backwards; }
 
 .flower--9 {
-  left: 88%;
+  left: 50%;
   bottom: 10vmin;
-  transform: rotate(8deg);
+  transform: rotate(26deg);
   animation: moving-flower-1 4s linear infinite;
   --petal-color: #fb8500;
   --petal-glow: #ffb703;
@@ -289,9 +295,9 @@ body {
 .flower--9 .flower__line__leaf--4 { animation: blooming-leaf-left var(--fl-speed) 1.5s backwards; }
 
 .flower--10 {
-  left: 42%;
+  left: 50%;
   bottom: 5vmin;
-  transform: rotate(-6deg);
+  transform: rotate(-4deg);
   animation: moving-flower-2 4s linear infinite;
   --petal-color: #06d6a0;
   --petal-glow: #80ffdb;
@@ -310,9 +316,9 @@ body {
 .flower--10 .flower__line__leaf--4 { animation: blooming-leaf-left var(--fl-speed) 2.3s backwards; }
 
 .flower--11 {
-  left: 70%;
-  bottom: 14vmin;
-  transform: rotate(12deg);
+  left: 50%;
+  bottom: 10vmin;
+  transform: rotate(15deg);
   animation: moving-flower-3 4s linear infinite;
   --petal-color: #f72585;
   --petal-glow: #ff85a1;
@@ -331,9 +337,9 @@ body {
 .flower--11 .flower__line__leaf--4 { animation: blooming-leaf-left var(--fl-speed) 1.7s backwards; }
 
 .flower--12 {
-  left: 12%;
-  bottom: 8vmin;
-  transform: rotate(-18deg);
+  left: 50%;
+  bottom: 10vmin;
+  transform: rotate(-30deg);
   animation: moving-flower-1 4s linear infinite;
   --petal-color: #9b5de5;
   --petal-glow: #c77dff;
