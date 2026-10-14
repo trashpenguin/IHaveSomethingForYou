@@ -30,7 +30,7 @@ Then visit http://localhost:8000. The garden and messages work offline; the opti
 - Opening the gift requests music playback automatically using Spotify’s official iFrame API. The panel opens so its controls are available immediately.
 - Playback status reflects Spotify’s confirmation. If a browser blocks autoplay, the Play music button retries from a direct tap; the embedded Spotify controls remain available.
 - Visiting `flower.html` directly keeps music off. The gift link uses `flower.html?music=1` to request playback.
-- Reduced-motion preferences keep the bouquet still and disable text transitions; languages still change automatically every 4.5 seconds. Pause messages stops the rotation. Users who prefer reduced motion continue to get a still bouquet.
+- Reduced-motion preferences keep the bouquet still and disable text transitions; languages still change automatically every 4.5 seconds. Pause messages stops the rotation. An Enable animations button appears when reduced motion is active; choosing it enables flower and sky motion for this tab session.
 - The invitation, gift link, bouquet, and first message work without JavaScript.
 - Layouts accommodate phones, tablets, desktops, and short landscape screens.
 

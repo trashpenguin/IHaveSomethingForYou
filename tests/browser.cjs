@@ -197,6 +197,27 @@ const server = http.createServer(async (req, res) => {
     assert.equal(await app.getByRole('button', { name: 'Pause flowers' }).count(), 0);
     assert.equal(await app.getByRole('button', { name: 'Animate flowers' }).count(), 0);
   });
+  await check('Reduced-motion visitors can enable visible flower and sky animation', async () => {
+    await app.emulateMedia({ reducedMotion: 'reduce' });
+    await app.goto('http://127.0.0.1:4173/flower.html');
+    const enable = app.getByRole('button', { name: 'Enable animations', exact: true });
+    assert(await enable.isVisible());
+    await enable.click();
+    assert.equal(await enable.isVisible(), false);
+    await app.waitForTimeout(3300);
+    const snapshot = () => app.evaluate(() => ({
+      flower: getComputedStyle(document.querySelector('.sprig')).transform,
+      sky: document.querySelector('canvas.living-sky').toDataURL(),
+    }));
+    const before = await snapshot();
+    await app.waitForTimeout(800);
+    const after = await snapshot();
+    assert.notEqual(before.flower, after.flower);
+    assert.notEqual(before.sky, after.sky);
+    await app.reload();
+    assert.equal(await enable.isVisible(), false);
+    assert.notEqual(await app.locator('.sprig').first().evaluate(el => getComputedStyle(el).animationName), 'none');
+  });
   await browser.close();
   server.close();
   process.exitCode = failures ? 1 : 0;

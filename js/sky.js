@@ -9,6 +9,7 @@
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const motionReduced = () => reduced.matches && !document.body.classList.contains('motion-enabled');
   let width, height, stars = [], clouds = [], frame, last = 0, time = 0;
   let pointer = { x: 0, y: 0 }, drift = { x: 0, y: 0 };
   let meteor = null, nextMeteor = 7;
@@ -27,7 +28,7 @@
       y: i / 27, x: .5 + Math.sin(i * .37) * .09 + random(-.06, .06),
       size: random(.10, .22), alpha: random(.025, .065),
     }));
-    if (reduced.matches) paint();
+    if (motionReduced()) paint();
   }
   function paint() {
     ctx.clearRect(0, 0, width, height);
@@ -55,7 +56,7 @@
         ctx.beginPath(); ctx.arc(x, y, star.radius * 4, 0, Math.PI * 2); ctx.fill();
       }
     }
-    if (!reduced.matches && time > nextMeteor) {
+    if (!motionReduced() && time > nextMeteor) {
       meteor = { born: time, x: random(.1, .8) * width, y: random(.04, .35) * height };
       nextMeteor = time + random(9, 17);
     }
@@ -79,17 +80,18 @@
   function start() {
     cancelAnimationFrame(frame); last = 0;
     if (document.hidden) return;
-    if (reduced.matches) { meteor = null; paint(); }
+    if (motionReduced()) { meteor = null; paint(); }
     else frame = requestAnimationFrame(animate);
   }
   window.addEventListener('resize', resize);
   window.addEventListener('pointermove', event => {
-    if (reduced.matches) return;
+    if (motionReduced()) return;
     pointer.x = (event.clientX / width - .5) * 18;
     pointer.y = (event.clientY / height - .5) * 12;
   }, { passive: true });
   document.addEventListener('visibilitychange', start);
   reduced.addEventListener('change', start);
+  window.addEventListener('gift-motion-change', start);
   window.addEventListener('pagehide', () => cancelAnimationFrame(frame));
   window.addEventListener('pageshow', start);
   resize(); start();
