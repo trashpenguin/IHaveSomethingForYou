@@ -1,20 +1,20 @@
-const title = document.querySelector('.title');
-if (!title) {
-  console.error("Error: Title element (.title) not found in the HTML.");
-} else {
-  const text = 'I Have Something For You'.split('');
+const giftLink = document.querySelector('.gift-button');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+let openingTimer;
 
-  for (let index = 0; index < text.length; index++) {
-    if (text[index] !== ' ') {
-      title.innerHTML += `<span>${text[index]}</span>`;
-    } else {
-      title.innerHTML += `<span style='margin-right: 20px;'></span>`;
-    }
-  }
+giftLink?.addEventListener('click', event => {
+  // Keep new-tab clicks and the HTML link's no-JavaScript fallback working.
+  if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+  if (reducedMotion.matches) return;
+  event.preventDefault();
+  if (document.body.classList.contains('gift-opening')) return;
+  document.body.classList.add('gift-opening');
+  giftLink.setAttribute('aria-busy', 'true');
+  openingTimer = setTimeout(() => window.location.assign(giftLink.href), 800);
+});
 
-  const textElements = document.querySelectorAll('.title span');
-  textElements.forEach((element) => {
-    const randomDelay = Math.random() * 1; // Random delay between 0 and 1 second
-    element.style.animationDelay = `${randomDelay}s`;
-  });
-}
+window.addEventListener('pageshow', () => {
+  clearTimeout(openingTimer);
+  document.body.classList.remove('gift-opening');
+  giftLink?.removeAttribute('aria-busy');
+});

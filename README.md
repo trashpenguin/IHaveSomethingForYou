@@ -1,98 +1,72 @@
-# 💐 I Have Something For You - Valentine's Flower Animation
+# I Have Something For You
 
-A romantic, animated flower webpage built with pure HTML, CSS (SCSS), and JavaScript. This project creates a beautiful, animated flower garden with a night sky background, perfect for sharing a special Valentine's Day message.
+A personal gift in two pages: an illustrated invitation, followed by an animated flower garden. Built with HTML, CSS, and vanilla JavaScript; no application dependencies or build step required.
 
-## ✨ Features
+## Preview
 
-- **Landing Page** (`index.html`) — Displays the text "I Have Something For You" with a subtle letter-by-letter animation and a button to open the flower display.
-- **Flower Animation Page** (`flower.html`) — Animated 3D flowers with blooming petals, swaying stalks, grass, and glowing light particles, all built with pure CSS.
-- **Typing Effect** — Messages are revealed letter-by-letter with a smooth typing animation.
-- **Responsive Design** — Optimized for mobile and desktop viewing.
-- **No External Dependencies** — Pure HTML, CSS, and vanilla JavaScript. No libraries or frameworks required.
+Visit https://trashpenguin.github.io/IHaveSomethingForYou/ for the published version. Local changes appear there after you push them to the branch used by GitHub Pages.
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/trashpenguin/sleeping.github.io.git
-   ```
-
-2. Open `index.html` in your browser:
-   ```bash
-   open index.html
-   ```
-   Or simply double-click the file.
-
-### Development
-
-To modify the SCSS source, compile it to CSS:
-
-```bash
-# Using the sass CLI
-sass scss/style.scss css/style.css
+```sh
+git clone https://github.com/trashpenguin/IHaveSomethingForYou.git
+cd IHaveSomethingForYou
 ```
 
-## 📁 Project Structure
+Open `index.html` directly, or run a local server:
 
-```
-sleeping.github.io/
-├── index.html            # Landing page
-├── flower.html           # Flower animation page
-├── README.md             # Project documentation
-├── css/
-│   ├── index.css         # Styles for the landing page
-│   ├── style.css         # Compiled CSS for the flower page
-│   └── style.css.map     # Source map for debugging SCSS
-├── scss/
-│   └── style.scss        # SCSS source for the flower animation
-├── js/
-│   ├── index.js          # Landing page animations
-│   └── main.js           # Flower page animations & effects
-└── images/
-    └── gift.png          # Favicon
+```sh
+python -m http.server 8000
 ```
 
-## 🛠️ Built With
+Then visit http://localhost:8000. The garden and messages work offline; the optional Spotify playlist requires an internet connection and playback depends on Spotify.
 
-- **HTML5** — Page structure
-- **CSS3 / SCSS** — Flower animations, gradients, and responsive layout
-- **Vanilla JavaScript** — Typing effect, DOM manipulation, localStorage handling
+## Experience
 
-## 🎨 Customization
+- Midnight blue, rose, and mint palette with a hand-drawn flower note.
+- Floating envelope, shimmering stars, a letter-opening transition, and an animated garden message. Reduced motion skips the transition.
+- An illustrated bouquet of cream and blush flowers, blue forget-me-nots, sage leaves, blue wrapping, and a pink ribbon. Stems grow, blossoms open in sequence, and individual sprigs sway automatically.
+- A live canvas starfield inspired by the reference: drifting stars, changing brightness, soft Milky Way clouds, pointer parallax, and occasional meteors. No background photo is used.
+- Complete messages rotate through 15 languages every 4.5 seconds with a soft fade, a language label, and the correct language attribute. Use Next language to switch manually, including with reduced motion enabled. No partial characters or rapidly deleting text.
+- Pause messages preserves the current language and pauses only message rotation. Flower animations start automatically.
+- Opening the gift requests music playback automatically using Spotify’s official iFrame API. The panel opens so its controls are available immediately.
+- Playback status reflects Spotify’s confirmation. If a browser blocks autoplay, the Play music button retries from a direct tap; the embedded Spotify controls remain available.
+- Visiting `flower.html` directly keeps music off. The gift link uses `flower.html?music=1` to request playback.
+- Reduced-motion preferences keep the bouquet still and disable text transitions; languages still change automatically every 4.5 seconds. Pause messages stops the rotation. Users who prefer reduced motion continue to get a still bouquet.
+- The invitation, gift link, bouquet, and first message work without JavaScript.
+- Layouts accommodate phones, tablets, desktops, and short landscape screens.
 
-### Changing the Message
+## Customize
 
-Edit `js/main.js` to modify the animated text on the flower page (default: `"wuwuvyang ❤️"`):
+Edit the invitation text in `index.html` and the first garden message in `flower.html`. Edit `phrases` in `js/main.js` to change the rotating messages and their language codes. Keep the first HTML message and the first entry in `phrases` in sync; `phraseIndex` starts at 1 so the first message has time to be read.
 
-```javascript
-const titles = "Your Message Here ❤️".split('');
+Replace the playlist ID in the Spotify iframe in `flower.html` with your playlist ID. Keep the iframe title descriptive.
+Also update the `uri` in `js/music.js` to the same playlist ID. The iframe provides the fallback player; the URI configures the controllable player.
+
+Spotify playback requires internet access and depends on the browser and Spotify account. [Spotify documents that autoplay is not available for every browser or user](https://developer.spotify.com/documentation/embeds/references/iframe-api). Playback is requested, but never reported as playing until Spotify confirms it.
+
+Shared palette, typography, focus styles, and motion preferences live in `css/theme.css`. Landing-page styles live in `css/index.css`; garden layout and controls live in `css/garden.css`.
+
+The bouquet is inline SVG in `flower.html`; its growth, blooming, and sway animations live in `css/bouquet.css`. Edit the SVG fills and shapes to customize the flowers. The original CSS/SCSS artwork remains in the repository for reference.
+
+## Automated checks
+
+Node.js is needed only for development checks. Install the test dependency and Chromium, then run the browser checks:
+
+```sh
+npm install
+npx playwright install chromium
+npm test
 ```
 
-Edit `js/index.js` to change the landing page text (default: `"I Have Something For You"`):
+The checks cover gift navigation and the opening transition, keyboard music controls, pause/resume, reduced motion, JavaScript-disabled content, and layout at four screen sizes. Music integration checks simulate Spotify’s API to verify automatic play requests, playback confirmation, pause controls, blocked-autoplay recovery, and silent direct visits. Actual Spotify audio playback is not exercised by the automated tests.
 
-```javascript
-const text = 'Your Text Here'.split('');
-```
+To use an already installed Chrome instead, set `BROWSER_CHANNEL=chrome` before running `npm test`.
 
-### Modifying Flower Colors
+## Before publishing
 
-Flower colors are controlled via CSS variables and gradients in `scss/style.scss`. Look for:
+Check both pages at phone and desktop sizes, navigate using Tab and Enter, open and close the music panel, pause and resume messages, and enable reduced motion. Also check the pages with JavaScript disabled. Spotify is an external service; test playback separately with your own account.
 
-- `background-color: #a7ffee` (petal color)
-- `background-color: #6bf0ff` (petal glow)
-- `#159faa`, `#39c6d6`, `#079097` (stem and leaf colors)
+## Credits
 
-## 📄 License
+The original repository created the CSS flower garden and multilingual love-message concept. This redesign adds a new illustrated bouquet alongside the invitation illustration, unified styling, accessible controls, and more reliable text rendering.
 
-This project is open source. Feel free to use, modify, and share.
-
-## 🙏 Acknowledgments
-
-- Inspired by pure CSS art and animation techniques
-- Built with ❤️ for sharing special moments
+No license file is currently included. Add a license you choose before explicitly granting reuse permissions.

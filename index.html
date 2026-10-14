@@ -1,50 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="images/gift.png" type="image/x-icon">
-  <link rel="stylesheet" href="css/index.css">
-
-  <!-- Document Title -->
-  <title>Do you trust me?</title>
-
-  <!-- Open Graph / Link Preview -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b32">
+  <meta name="description" content="A little note, a garden of flowers, and something just for you.">
+  <title>I have something for you</title>
+  <link rel="icon" href="images/gift.png" type="image/png">
+  <link rel="stylesheet" href="css/theme.css?v=6">
+  <link rel="stylesheet" href="css/index.css?v=6">
+  <script src="js/index.js" defer></script>
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://trashpenguin.github.io/IHaveSomethingForYou/">
-  <meta property="og:title" content="Do you trust me?">
-  <meta property="og:description" content="I have something for you... 🌸">
+  <meta property="og:title" content="I have something for you">
+  <meta property="og:description" content="A little surprise, picked just for you. 🌸">
   <meta property="og:image" content="https://trashpenguin.github.io/IHaveSomethingForYou/images/gift.png">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Do you trust me?">
-  <meta name="twitter:description" content="I have something for you... 🌸">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="I have something for you">
+  <meta name="twitter:description" content="A little surprise, picked just for you. 🌸">
   <meta name="twitter:image" content="https://trashpenguin.github.io/IHaveSomethingForYou/images/gift.png">
+  <script src="js/sky.js?v=6" defer></script>
 </head>
-
-<body>
-  <!-- Background -->
-  <div class="night"></div>
-
-  <!-- Title -->
-  <h1 class="title"></h1>
-
-  <!-- Button -->
-  <div style="position: absolute; top: 60vh; width: 100%; display: flex; justify-content: center;">
-    <a href="flower.html" class="btn">
-      <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
-        <path
-          d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z">
-        </path>
-      </svg>
-
-      <span class="text">Open</span>
-    </a>
-  </div>
-
-  <script src="js/index.js"></script>
+<body class="invitation-page">
+  <div class="night-sky" aria-hidden="true"></div>
+  <header class="site-header"><span class="wordmark">For you<span aria-hidden="true"> ♡</span></span><span class="header-note">A little something from the heart</span></header>
+  <main class="invitation">
+    <div class="envelope" aria-hidden="true">
+      <div class="note"><svg viewBox="0 0 80 100"><path d="M40 89V40M40 66Q15 66 16 49Q35 46 40 66M40 77Q64 74 62 56Q43 56 40 77"/><path class="petal" d="M40 41C8 43 8 16 25 20C22 1 49 1 48 20C70 12 77 40 40 41Z"/></svg><span>Just for you</span></div>
+      <div class="envelope-back"></div><div class="envelope-front"></div><div class="seal">♡</div>
+    </div>
+    <h1>I have something<br>for you.</h1>
+    <p>No special occasion.<br>Just a little reminder of how much you mean to me.</p>
+    <a class="gift-button" href="flower.html?music=1">Open your gift <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11Z"/></svg></a>
+    <span class="invitation-hint">Some things are better said with flowers.</span>
+  </main>
+  <footer class="site-footer">A small gift. A whole lot of love.</footer>
 </body>
-
 </html>

@@ -1,0 +1,14 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+.night { position: fixed; inset: 0; pointer-events: none; }
+.garden-page .flowers { position: absolute; left: 50%; bottom: 35px; transform: translateX(-50%); width: min(560px, 96vw); height: min(56svh, 540px); }
+.bouquet-art { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 12px 24px #0005); }
+.sprig { transform-origin: 300px 510px; animation: sprig-sway var(--sway) calc(var(--delay) + 1.5s) ease-in-out infinite alternate; }
+.bloom, .small-bloom { transform-box: fill-box; transform-origin: center; animation: flower-unfold 1.3s var(--delay) cubic-bezier(.2,.7,.25,1.1) both; }
+.stem-line { stroke-dasharray: 650; stroke-dashoffset: 0; animation: stem-grow 1.5s var(--delay) ease-out both; }
+.ribbon-bow { transform-origin: 302px 498px; animation: bow-settle 1.6s ease-out both; }
+@keyframes sprig-sway { from { transform: rotate(calc(var(--lean) * -1)); } to { transform: rotate(var(--lean)); } }
+@keyframes flower-unfold { from { opacity: 0; transform: scale(.15) rotate(-18deg); } to { opacity: 1; transform: scale(1) rotate(0deg); } }
+@keyframes stem-grow { from { stroke-dashoffset: 650; } to { stroke-dashoffset: 0; } }
+@keyframes bow-settle { from { opacity: 0; transform: scale(.8); } to { opacity: 1; transform: scale(1); } }
+@media (max-width: 480px) { .garden-page .flowers { height: min(52svh, 480px); bottom: 70px; } }
+@media (max-height: 600px) and (min-width: 481px) { .garden-page .flowers { left: 73%; width: 48vw; height: 77svh; bottom: 20px; } }
