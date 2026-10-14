@@ -48,7 +48,7 @@ window.onSpotifyIframeApiReady = api => {
   if (!placeholder) return;
   try {
     api.createController(placeholder, {
-      uri: 'spotify:playlist:1pUUvsXI2I4rKJkToVTvsc',
+      uri: 'spotify:playlist:4Wqs29Qvc1o9vVAx6taHP2',
       width: '100%',
       height: 152,
     }, embedController => {
