@@ -2,8 +2,8 @@ body.garden-page { background: var(--ink); min-height: 100svh; isolation: isolat
 .garden-page .night { background: #050b15; z-index: -1; filter: none; }
 .garden-page .site-header { position: absolute; top: 0; left: 0; width: 100%; }
 .garden-message { position: absolute; z-index: 15; top: 115px; left: 50%; transform: translateX(-50%); width: min(90%, 760px); text-align: center; }
-.garden-page .title { position: static; margin: 0; font: 400 clamp(2.5rem, 5vw, 4.2rem)/1.15 Georgia, 'Times New Roman', serif; letter-spacing: -.025em; text-shadow: none; color: var(--paper); min-height: 1.2em; }
-.garden-message p { margin: 16px 0 0; font-size: .95rem; color: var(--muted); line-height: 1.6; }
+.garden-page .title { position: static; margin: 0; font: 400 clamp(3rem, 6vw, 5rem)/1.15 Georgia, 'Times New Roman', serif; letter-spacing: -.025em; text-shadow: none; color: var(--paper); min-height: 1.2em; }
+.garden-message p { margin: 16px 0 0; font-size: 1.05rem; color: var(--muted); line-height: 1.6; }
 .garden-heart { display: block; color: var(--rose); font-size: 1.6rem; margin-bottom: 15px; }
 .message-meta { display: flex; justify-content: center; align-items: center; gap: 12px; min-height: 32px; margin-bottom: 15px; color: var(--muted); font-size: .75rem; }
 .message-meta .garden-heart { margin: 0; font-size: 1.5rem; }
@@ -44,7 +44,7 @@ body.garden-page { background: var(--ink); min-height: 100svh; isolation: isolat
 .music-panel[open] iframe { height: 152px; }
 .tab-hidden * { animation-play-state: paused !important; }
 @media (max-width: 768px) { .garden-message { top: 110px; }  }
-@media (max-width: 480px) { .garden-message { top: 125px; } .garden-page .title { font-size: clamp(1.8rem, 7.5vw, 2.4rem); } .garden-message p { font-size: .8rem; }  .garden-controls { bottom: max(18px, env(safe-area-inset-bottom)); left: 16px; right: 16px; } .motion-control, .music-panel summary { padding: 12px 14px; font-size: .72rem; } }
+@media (max-width: 480px) { .garden-message { top: 95px; } .garden-page .title { font-size: clamp(2rem, 8.5vw, 2.7rem); } .garden-message p { font-size: .88rem; }  .garden-controls { bottom: max(18px, env(safe-area-inset-bottom)); left: 16px; right: 16px; } .motion-control, .music-panel summary { padding: 12px 14px; font-size: .72rem; } }
 @media (max-height: 600px) { .garden-message { top: 72px; } .garden-heart { display: none; } .garden-page .title { font-size: 2rem; } .garden-message p { margin-top: 8px; font-size: .75rem; }  .garden-page .site-header { padding-top: 18px; } .garden-controls { bottom: 12px; } .music-panel iframe { height: 152px; } }
 @media (prefers-reduced-motion: reduce) { .garden-page:not(.motion-enabled) .stars, .garden-page:not(.motion-enabled) .fireflies, .garden-page:not(.motion-enabled) .flower__light { display: none; } }
 @media (max-width: 480px) { .garden-controls { flex-wrap: wrap; align-items: center; gap: 8px; } .garden-motion-controls { width: 100%; } .music-panel:not([open]) { position: absolute; bottom: 54px; right: 0; } }
