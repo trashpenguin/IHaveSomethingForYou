@@ -218,6 +218,30 @@ const server = http.createServer(async (req, res) => {
     assert.equal(await enable.isVisible(), false);
     assert.notEqual(await app.locator('.sprig').first().evaluate(el => getComputedStyle(el).animationName), 'none');
   });
+  await check('Landing page enables envelope and sky motion and preserves the choice across pages', async () => {
+    const landingContext = await browser.newContext({ reducedMotion: 'reduce', viewport: { width: 1280, height: 900 } });
+    const landing = await landingContext.newPage();
+    await landing.goto('http://127.0.0.1:4173/');
+    assert.equal(await landing.locator('.envelope').evaluate(el => getComputedStyle(el).animationName), 'none');
+    await landing.getByRole('button', { name: 'Enable animations' }).click();
+    const sample = () => landing.evaluate(() => ({
+      envelope: getComputedStyle(document.querySelector('.envelope')).transform,
+      sky: document.querySelector('canvas').toDataURL(),
+    }));
+    const before = await sample();
+    await landing.waitForTimeout(900);
+    const after = await sample();
+    assert.notEqual(before.envelope, after.envelope);
+    assert.notEqual(before.sky, after.sky);
+    await landing.getByRole('link', { name: 'Open your gift' }).click();
+    assert(await landing.locator('body').evaluate(el => el.classList.contains('gift-opening')));
+    await landing.waitForURL('**/flower.html?music=1');
+    assert.notEqual(await landing.locator('.sprig').first().evaluate(el => getComputedStyle(el).animationName), 'none');
+    await landing.getByRole('link', { name: 'Back to your invitation' }).click();
+    assert.notEqual(await landing.locator('.envelope').evaluate(el => getComputedStyle(el).animationName), 'none');
+    assert.equal(await landing.getByRole('button', { name: 'Enable animations' }).isVisible(), false);
+    await landingContext.close();
+  });
   await browser.close();
   server.close();
   process.exitCode = failures ? 1 : 0;

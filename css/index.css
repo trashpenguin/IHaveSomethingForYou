@@ -16,7 +16,7 @@
 .gift-opening .invitation { animation: invitation-leave .8s ease-in both; pointer-events: none; }
 @keyframes envelope-float {
   0%, 100% { transform: translateY(0) rotate(-7deg) scale(var(--envelope-scale)); }
-  50% { transform: translateY(-9px) rotate(-4deg) scale(var(--envelope-scale)); }
+  50% { transform: translateY(-15px) rotate(-4deg) scale(var(--envelope-scale)); }
 }
 @keyframes invitation-arrive { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @keyframes invitation-leave { 0%, 40% { opacity: 1; } 100% { opacity: 0; transform: translateY(-20px); } }
@@ -31,3 +31,6 @@
 .seal { position: absolute; top: 84px; left: 88px; width: 34px; height: 34px; border-radius: 50%; background: #a65c7a; border: 3px double #cf91ab; color: #f7dce6; display: grid; place-items: center; font-size: 21px; box-shadow: 1px 2px 6px #50324545; }
 @media (max-width: 480px) { .invitation { padding-top: 38px; } .invitation h1 { margin-top: 28px; } .envelope { --envelope-scale: .86; transform: rotate(-7deg) scale(.86); margin-top: 12px; } .invitation p { font-size: .9rem; } }
 @media (max-height: 620px) { .invitation { padding: 20px; } .envelope { display: none; } .invitation h1 { font-size: clamp(2.4rem, 5vw, 3.4rem); margin: 8px 0 16px; } .gift-button { margin-top: 20px; } }
+
+.enable-motion { margin-top: 12px; padding: 10px 18px; min-height: 44px; border: 1px solid #b8bfd250; border-radius: 24px; background: #15233b; color: var(--paper); cursor: pointer; }
+.enable-motion:hover { background: #263750; }
