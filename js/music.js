@@ -50,7 +50,7 @@ window.onSpotifyIframeApiReady = api => {
     api.createController(placeholder, {
       uri: 'spotify:playlist:4Wqs29Qvc1o9vVAx6taHP2',
       width: '100%',
-      height: 152,
+      height: 352,
     }, embedController => {
       controller = embedController;
       const iframe = musicPanel.querySelector('iframe');
