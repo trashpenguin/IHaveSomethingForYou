@@ -10,5 +10,5 @@
 @keyframes flower-unfold { from { opacity: 0; transform: scale(.15) rotate(-18deg); } to { opacity: 1; transform: scale(1) rotate(0deg); } }
 @keyframes stem-grow { from { stroke-dashoffset: 650; } to { stroke-dashoffset: 0; } }
 @keyframes bow-settle { from { opacity: 0; transform: scale(.8); } to { opacity: 1; transform: scale(1); } }
-@media (max-width: 480px) { .garden-page .flowers { height: min(52svh, 480px); bottom: 70px; } }
+@media (max-width: 480px) { .garden-page .flowers { height: min(50svh, 460px); bottom: 125px; } }
 @media (max-height: 600px) and (min-width: 481px) { .garden-page .flowers { left: 73%; width: 48vw; height: 77svh; bottom: 20px; } }
